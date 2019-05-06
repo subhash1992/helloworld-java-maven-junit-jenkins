@@ -26,6 +26,8 @@ pipeline {
             steps {
                 junit 'target/surefire-reports/**/*.xml'
                 archive 'target/*.jar'
+                archiveArtifacts artifacts: 'screenshots/**,build/test/results/*.xml', allowEmptyArchive: true
+
             }
         }
     }
